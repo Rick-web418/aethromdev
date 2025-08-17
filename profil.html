@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Profilim</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <h2>Bizim Site</h2>
+    <div>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="login.html">Giriş</a>
+      <a href="register.html">Kayıt Ol</a>
+      <a href="profil.html" class="active">Profilim</a>
+    </div>
+  </nav>
+
+  <div class="profile-container">
+    <div class="profile-card">
+      <img src="https://i.pravatar.cc/150" alt="Profil Fotoğrafı" class="profile-img">
+      <h2 id="profile-name">Kullanıcı Adı</h2>
+      <p id="profile-email">example@gmail.com</p>
+
+      <label for="newName">Yeni İsim:</label>
+      <input type="text" id="newName" placeholder="Yeni isminizi girin">
+      <button class="blue-btn" onclick="updateProfile()">Kaydet</button>
+      <div id="profileMessage" class="message"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

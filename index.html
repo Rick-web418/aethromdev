@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ana Sayfa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <h2>AethromDev</h2>
+    <div>
+      <a href="index.html" class="active">Ana Sayfa</a>
+      <a href="bots.html">Ticaret Botlarımız</a>
+      <a href="https://discord.gg/JHXf5AsU" target="_blank">Discord Sunucumuz</a>
+      <a href="login.html">Giriş</a>
+      <a href="register.html">Kayıt Ol</a>
+      <a href="profil.html">Profilim</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Hoş Geldiniz</h1>
+    <p>Açıklama kısmını sen düzenleyebilirsin.</p>
+    <a href="register.html" class="blue-btn">Hemen Kayıt Ol</a>
+  </header>
+
+  <section class="features">
+    <div class="card">
+      <h3>Ticaret Botu</h3>
+      <p>Gelişmiş ticaret botu açıklaması</p>
+      <a href="#" class="blue-btn">Detay</a>
+    </div>
+    <div class="card">
+      <h3>Discord Botu</h3>
+      <p>Discord için özel botlarımız</p>
+      <a href="#" class="blue-btn">Detay</a>
+    </div>
+    <div class="card">
+      <h3>Güvenlik Sistemleri</h3>
+      <p>Sunucunuz için koruma çözümleri</p>
+      <a href="#" class="blue-btn">Detay</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Bizim Site</p>
+  </footer>
+</body>
+</html>
+<section class="developers">
+  <h2>Geliştiricilerimiz</h2>
+  <div class="dev-card">
+    <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Dev Avatar" class="dev-avatar">
+    <h3 id="devName">Yükleniyor...</h3>
+    <p>Durum: <span id="devStatus" class="status offline">Bağlanıyor...</span></p>
+  </div>
+</section>
+
+<script>
+  async function loadStatus() {
+    try {
+      const res = await fetch("http://localhost:3000/status");
+      const data = await res.json();
+
+      document.getElementById("devName").textContent = data.username;
+      const statusEl = document.getElementById("devStatus");
+
+      statusEl.textContent = data.status;
+
+      statusEl.className = "status " + data.status; // online, idle, dnd, offline
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  loadStatus();
+  setInterval(loadStatus, 10000); // her 10 sn'de bir güncelle
+</script>
+<section class="developers">
+  <h2>Geliştiricilerimiz</h2>
+  <div class="dev-card">
+    <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Dev Avatar" class="dev-avatar">
+    <h3 id="devName">Yükleniyor...</h3>
+    <p>Durum: <span id="devStatus" class="status offline">Bağlanıyor...</span></p>
+  </div>
+  <br>
+  <button class="dev-btn" onclick="window.open('developer.html','_blank')">Daha Fazla Gör</button>
+</section>
+
+<script>
+  async function loadStatus() {
+    try {
+      const res = await fetch("http://localhost:3000/status");
+      const data = await res.json();
+
+      document.getElementById("devName").textContent = data.username;
+      const statusEl = document.getElementById("devStatus");
+
+      statusEl.textContent = data.status;
+      statusEl.className = "status " + data.status; // online, idle, dnd, offline
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  loadStatus();
+  setInterval(loadStatus, 10000); // 10 saniyede bir güncelle
+</script>
+<section class="bots">
+  <h2>Discord Botlarımız</h2>
+
+  <div class="bot-list">
+    <div class="bot-item">
+      <button onclick="toggleBot('ticket')">🎫 Ticket Botu</button>
+      <div id="bot-ticket" class="bot-embed">Yakında...</div>
+    </div>
+
+    <div class="bot-item">
+      <button onclick="toggleBot('basvuru')">📝 Başvuru Botu</button>
+      <div id="bot-basvuru" class="bot-embed">Yakında...</div>
+    </div>
+
+    <div class="bot-item">
+      <button onclick="toggleBot('scrim')">⚔️ Scrim Botu</button>
+      <div id="bot-scrim" class="bot-embed">Yakında...</div>
+    </div>
+
+    <div class="bot-item">
+      <button onclick="toggleBot('mainspot')">⭐ Main Spot Botu</button>
+      <div id="bot-mainspot" class="bot-embed">Yakında...</div>
+    </div>
+
+    <div class="bot-item">
+      <button onclick="toggleBot('scrimkomut')">📜 Scrim Komutları Botu</button>
+      <div id="bot-scrimkomut" class="bot-embed">Yakında...</div>
+    </div>
+
+    <div class="bot-item">
+      <button onclick="toggleBot('log')">📑 Log Botu</button>
+      <div id="bot-log" class="bot-embed">Yakında...</div>
+    </div>
+
+    <div class="bot-item">
+      <button onclick="toggleBot('muzik')">🎵 Müzik Botu</button>
+      <div id="bot-muzik" class="bot-embed">Yakında...</div>
+    </div>
+
+    <div class="bot-item">
+      <button onclick="toggleBot('gorev')">🎯 Sunucu Görev Botu</button>
+      <div id="bot-gorev" class="bot-embed">Yakında...</div>
+    </div>
+  </div>
+</section>

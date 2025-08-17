@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Giriş Yap</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <h2>Bizim Site</h2>
+    <div>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="register.html">Kayıt Ol</a>
+    </div>
+  </nav>
+
+  <div class="form-container">
+    <h2>Giriş Yap</h2>
+    <input type="email" id="loginEmail" placeholder="E-posta">
+    <input type="password" id="loginPassword" placeholder="Şifre">
+    <button class="blue-btn" onclick="login()">Giriş</button>
+    <p>Hesabın yok mu? <a href="register.html">Kayıt Ol</a></p>
+    <div id="loginMessage" class="message"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
